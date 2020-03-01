@@ -6,12 +6,14 @@ public class User extends BaseEntity {
 
     private String name;
     private Set<Role> roles;
+    private String password;
     private Vote vote;
 
-    public User(int id, String name, Set<Role> roles, Vote vote) {
+    public User(int id, String name, Set<Role> roles, String password, Vote vote) {
         super(id);
         this.name = name;
         this.roles = roles;
+        this.password = password;
         this.vote = vote;
     }
 
@@ -31,6 +33,14 @@ public class User extends BaseEntity {
         this.roles = roles;
     }
 
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
     public Vote getVote() {
         return vote;
     }
@@ -43,8 +53,9 @@ public class User extends BaseEntity {
     public String toString() {
         return "User{" +
                 "id=" + id +
-                ", name='" + name + '\'' +
+                ", name='" + name +
                 ", roles=" + roles +
+                ", password='" + password +
                 ", vote=" + vote +
                 '}';
     }
