@@ -5,6 +5,12 @@ import java.util.Set;
 
 public class Menu extends BaseEntity {
 
+    public static final String GET_ALL = "Menu.getAll";
+    public static final String GET_ALL_BY_DATE = "Menu.getAllByDate";
+    public static final String GET_ALL_BY_DATE_AND_RESTAURANT = "Menu.getAllByDateAndRestaurant";
+    public static final String DELETE = "Menu.delete";
+    public static final String DELETE_ALL = "Menu.deleteAll";
+
     private Restaurant restaurant;
     private LocalDate date;
     private Set<Dish> dishes;

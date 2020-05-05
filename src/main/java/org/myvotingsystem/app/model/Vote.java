@@ -3,6 +3,13 @@ package org.myvotingsystem.app.model;
 import java.time.LocalDate;
 
 public class Vote extends BaseEntity {
+
+    public static final String GET_ALL = "Vote.getAll";
+    public static final String GET_ALL_BY_DATE = "Vote.getAllByDate";
+    public static final String GET_BY_USER_AND_DATE = "Vote.getByUserAndDate";
+    public static final String DELETE = "Vote.delete";
+    public static final String DELETE_ALL = "Vote.deleteAll";
+
     private User user;
     private Restaurant restaurant;
     private LocalDate date;

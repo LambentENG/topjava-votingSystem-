@@ -4,6 +4,10 @@ import java.util.Set;
 
 public class User extends BaseEntity {
 
+    public static final String GET_BY_NAME = "User.getByName";
+    public static final String GET_ALL = "User.getAll";
+    public static final String DELETE = "User.delete";
+
     private String name;
     private Set<Role> roles;
     private String password;
