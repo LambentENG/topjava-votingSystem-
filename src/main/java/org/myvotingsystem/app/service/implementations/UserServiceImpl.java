@@ -4,6 +4,8 @@ import org.myvotingsystem.app.model.User;
 import org.myvotingsystem.app.repository.interfaces.UserRepo;
 import org.myvotingsystem.app.service.interfaces.UserService;
 import org.myvotingsystem.app.to.UserTo;
+import org.myvotingsystem.app.util.UserUtil;
+import org.myvotingsystem.app.util.ValidationUtil;
 import org.springframework.util.Assert;
 
 import java.util.List;

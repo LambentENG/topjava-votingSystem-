@@ -3,6 +3,7 @@ package org.myvotingsystem.app.service.implementations;
 import org.myvotingsystem.app.model.Restaurant;
 import org.myvotingsystem.app.repository.interfaces.RestaurantRepo;
 import org.myvotingsystem.app.service.interfaces.RestaurantService;
+import org.myvotingsystem.app.util.ValidationUtil;
 import org.springframework.util.Assert;
 
 import java.util.List;
