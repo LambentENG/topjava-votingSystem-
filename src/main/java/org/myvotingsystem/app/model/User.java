@@ -13,10 +13,20 @@ public class User extends BaseEntity {
     private String password;
     private Vote vote;
 
+    public User() {
+    }
+
     public User(Integer id, String name, Set<Role> roles, String password, Vote vote) {
         super(id);
         this.name = name;
         this.roles = roles;
+        this.password = password;
+        this.vote = vote;
+    }
+
+    public User(Integer id, String name, String password, Role roles) {
+        super(id);
+        this.name = name;
         this.password = password;
     }
 
