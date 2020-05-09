@@ -14,7 +14,7 @@ public class Vote extends BaseEntity {
     private Restaurant restaurant;
     private LocalDate date;
 
-    public Vote(int id, User user, Restaurant restaurant, LocalDate date) {
+    public Vote(Integer id, User user, Restaurant restaurant, LocalDate date) {
         super(id);
         this.user = user;
         this.restaurant = restaurant;
