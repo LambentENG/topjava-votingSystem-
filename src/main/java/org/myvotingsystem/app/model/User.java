@@ -1,8 +1,5 @@
 package org.myvotingsystem.app.model;
 
-import org.springframework.security.core.GrantedAuthority;
-
-import java.util.Collection;
 import java.util.Set;
 
 public class User extends BaseEntity {
@@ -41,7 +38,7 @@ public class User extends BaseEntity {
         this.name = name;
     }
 
-    public Collection<? extends GrantedAuthority> getRoles() {
+    public Set<Role> getRoles() {
         return roles;
     }
 
