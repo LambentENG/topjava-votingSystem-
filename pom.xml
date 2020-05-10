@@ -110,9 +110,9 @@
             <version>${postgresql.version}</version>
         </dependency>
         <dependency>
-            <groupId>org.hsqldb</groupId>
-            <artifactId>hsqldb</artifactId>
-            <version>2.3.4</version>
+                <groupId>org.hsqldb</groupId>
+                <artifactId>hsqldb</artifactId>
+                <version>2.5.0</version>
         </dependency>
 
         <!--- Tomcat-jdbc -->
@@ -179,7 +179,6 @@
             <artifactId>jackson-databind</artifactId>
             <version>2.11.0</version>
         </dependency>
-
 
         <!--Test-->
         <dependency>
