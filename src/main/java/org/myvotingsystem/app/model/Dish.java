@@ -25,6 +25,9 @@ public class Dish extends BaseEntity {
     private double price;
     private Menu menu;
 
+    public Dish() {
+    }
+
     public Dish(int id, String name, double price) {
         super(id);
         this.name = name;

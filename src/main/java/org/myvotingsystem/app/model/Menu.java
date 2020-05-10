@@ -43,6 +43,8 @@ public class Menu extends BaseEntity {
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "menu")
     private Set<Dish> dishes;
 
+    public Menu() {
+    }
 
     public Menu(int id, Restaurant restaurant, LocalDate date, Set<Dish> dishes) {
         super(id);
