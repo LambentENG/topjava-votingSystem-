@@ -1,7 +1,20 @@
 package org.myvotingsystem.app.model;
 
+import javax.persistence.Entity;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
+import javax.persistence.Table;
 import java.time.LocalDate;
 
+@NamedQueries({
+        @NamedQuery(name = Vote.GET_ALL, query = "SELECT v FROM Vote v"),
+        @NamedQuery(name = Vote.GET_ALL_BY_DATE, query = "SELECT v FROM Vote v WHERE v.date=:date"),
+        @NamedQuery(name = Vote.GET_BY_USER_AND_DATE, query = "SELECT v FROM Vote v WHERE v.user.id=:userId AND v.date=:date"),
+        @NamedQuery(name = Vote.DELETE, query = "DELETE FROM Vote v WHERE v.id=:id"),
+        @NamedQuery(name = Vote.DELETE_ALL, query = "DELETE FROM Vote v")
+})
+@Entity
+@Table(name = "votes")
 public class Vote extends BaseEntity {
 
     public static final String GET_ALL = "Vote.getAll";
