@@ -1,8 +1,18 @@
 package org.myvotingsystem.app.to;
 
+import org.hibernate.validator.constraints.Length;
+
+import javax.validation.constraints.NotBlank;
+
 public class UserTo {
+    @NotBlank
     private Integer id;
+
+    @NotBlank
     private String name;
+
+    @NotBlank
+    @Length(min = 5, max = 32)
     private String password;
 
     public UserTo() {
