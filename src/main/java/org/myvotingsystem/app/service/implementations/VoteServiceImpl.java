@@ -5,16 +5,20 @@ import org.myvotingsystem.app.repository.interfaces.VoteRepo;
 import org.myvotingsystem.app.service.interfaces.VoteService;
 import org.myvotingsystem.app.util.ValidationUtil;
 import org.myvotingsystem.app.util.exception.NoChanceException;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import org.springframework.util.Assert;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.List;
 
+@Service
 public class VoteServiceImpl implements VoteService {
 
     private VoteRepo voteRepo;
 
+    @Autowired
     public VoteServiceImpl(VoteRepo voteRepo) {
         this.voteRepo = voteRepo;
     }

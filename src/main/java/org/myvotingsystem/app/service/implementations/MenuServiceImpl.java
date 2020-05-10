@@ -6,17 +6,21 @@ import org.myvotingsystem.app.repository.interfaces.DishRepo;
 import org.myvotingsystem.app.repository.interfaces.MenuRepo;
 import org.myvotingsystem.app.service.interfaces.MenuService;
 import org.myvotingsystem.app.util.ValidationUtil;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import org.springframework.util.Assert;
 
 import java.time.LocalDate;
 import java.util.List;
 import java.util.Set;
 
+@Service
 public class MenuServiceImpl implements MenuService {
 
     private MenuRepo menuRepo;
     private DishRepo dishRepo;
 
+    @Autowired
     public MenuServiceImpl(MenuRepo menuRepo, DishRepo dishRepo) {
         this.menuRepo = menuRepo;
         this.dishRepo = dishRepo;

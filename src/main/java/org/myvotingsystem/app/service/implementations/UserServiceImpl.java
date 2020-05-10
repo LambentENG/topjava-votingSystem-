@@ -6,14 +6,18 @@ import org.myvotingsystem.app.service.interfaces.UserService;
 import org.myvotingsystem.app.to.UserTo;
 import org.myvotingsystem.app.util.UserUtil;
 import org.myvotingsystem.app.util.ValidationUtil;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import org.springframework.util.Assert;
 
 import java.util.List;
 
+@Service("userService")
 public class UserServiceImpl implements UserService {
 
     private UserRepo userRepo;
 
+    @Autowired
     public UserServiceImpl(UserRepo userRepo) {
         this.userRepo = userRepo;
     }

@@ -4,14 +4,18 @@ import org.myvotingsystem.app.model.Dish;
 import org.myvotingsystem.app.repository.interfaces.DishRepo;
 import org.myvotingsystem.app.service.interfaces.DishService;
 import org.myvotingsystem.app.util.ValidationUtil;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import org.springframework.util.Assert;
 
 import java.util.List;
 
+@Service
 public class DishServiceImpl implements DishService {
 
     private DishRepo dishRepo;
 
+    @Autowired
     public DishServiceImpl(DishRepo dishRepo) {
         this.dishRepo = dishRepo;
     }

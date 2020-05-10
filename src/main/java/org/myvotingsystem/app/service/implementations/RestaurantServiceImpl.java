@@ -4,14 +4,18 @@ import org.myvotingsystem.app.model.Restaurant;
 import org.myvotingsystem.app.repository.interfaces.RestaurantRepo;
 import org.myvotingsystem.app.service.interfaces.RestaurantService;
 import org.myvotingsystem.app.util.ValidationUtil;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import org.springframework.util.Assert;
 
 import java.util.List;
 
+@Service
 public class RestaurantServiceImpl implements RestaurantService {
 
     private RestaurantRepo restaurantRepo;
 
+    @Autowired
     public RestaurantServiceImpl(RestaurantRepo restaurantRepo) {
         this.restaurantRepo = restaurantRepo;
     }

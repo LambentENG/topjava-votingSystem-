@@ -3,11 +3,15 @@ package org.myvotingsystem.app.repository.implementations;
 import org.myvotingsystem.app.model.Dish;
 import org.myvotingsystem.app.model.Menu;
 import org.myvotingsystem.app.repository.interfaces.DishRepo;
+import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import java.util.List;
 
+@Repository
+@Transactional(readOnly = true)
 public class DishRepoImpl implements DishRepo {
 
     @PersistenceContext
@@ -31,6 +35,7 @@ public class DishRepoImpl implements DishRepo {
                 .getResultList();
     }
 
+    @Transactional
     @Override
     public Dish save(Dish dish, int menuId) {
         if (!dish.isNew() && get(dish.getId(), menuId) == null) {
@@ -45,6 +50,7 @@ public class DishRepoImpl implements DishRepo {
         }
     }
 
+    @Transactional
     @Override
     public boolean delete(int id, int menuId) {
         return em.createNamedQuery(Dish.DELETE)
@@ -53,6 +59,7 @@ public class DishRepoImpl implements DishRepo {
                 .executeUpdate() != 0;
     }
 
+    @Transactional
     @Override
     public void deleteAllMenuDishes(int menuId) {
         em.createNamedQuery(Dish.DELETE_ALL_MENU_DISHES)

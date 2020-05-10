@@ -5,12 +5,16 @@ import org.myvotingsystem.app.model.User;
 import org.myvotingsystem.app.model.Vote;
 import org.myvotingsystem.app.repository.interfaces.VoteRepo;
 import org.springframework.dao.support.DataAccessUtils;
+import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import java.time.LocalDate;
 import java.util.List;
 
+@Repository
+@Transactional(readOnly = true)
 public class VoteRepoImpl implements VoteRepo {
 
     @PersistenceContext
@@ -42,6 +46,7 @@ public class VoteRepoImpl implements VoteRepo {
                 .getResultList();
     }
 
+    @Transactional
     @Override
     public Vote save(Vote vote, int userId, int restaurantId) {
         vote.setUser(em.getReference(User.class, userId));
@@ -54,11 +59,13 @@ public class VoteRepoImpl implements VoteRepo {
         }
     }
 
+    @Transactional
     @Override
     public boolean delete(int id) {
         return em.createNamedQuery(Vote.DELETE).setParameter("id", id).executeUpdate() != 0;
     }
 
+    @Transactional
     @Override
     public void deleteAll() {
         em.createNamedQuery(Vote.DELETE_ALL).executeUpdate();

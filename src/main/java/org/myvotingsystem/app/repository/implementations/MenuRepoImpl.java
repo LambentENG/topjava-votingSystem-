@@ -3,12 +3,16 @@ package org.myvotingsystem.app.repository.implementations;
 import org.myvotingsystem.app.model.Menu;
 import org.myvotingsystem.app.model.Restaurant;
 import org.myvotingsystem.app.repository.interfaces.MenuRepo;
+import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import java.time.LocalDate;
 import java.util.List;
 
+@Repository
+@Transactional(readOnly = true)
 public class MenuRepoImpl implements MenuRepo {
 
     @PersistenceContext
@@ -40,6 +44,7 @@ public class MenuRepoImpl implements MenuRepo {
                 .getResultList();
     }
 
+    @Transactional
     @Override
     public Menu save(Menu menu, int restaurantId) {
         menu.setRestaurant(em.getReference(Restaurant.class, restaurantId));
@@ -51,6 +56,7 @@ public class MenuRepoImpl implements MenuRepo {
         }
     }
 
+    @Transactional
     @Override
     public boolean delete(int id, int restaurantId) {
         return em.createNamedQuery(Menu.DELETE)
@@ -59,6 +65,7 @@ public class MenuRepoImpl implements MenuRepo {
                 .executeUpdate() != 0;
     }
 
+    @Transactional
     @Override
     public void deleteAll() {
         em.createNamedQuery(Menu.DELETE_ALL).executeUpdate();
