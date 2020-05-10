@@ -115,6 +115,14 @@
             <version>2.3.4</version>
         </dependency>
 
+        <!--- Tomcat-jdbc -->
+        <dependency>
+            <groupId>org.apache.tomcat</groupId>
+            <artifactId>tomcat-jdbc</artifactId>
+            <version>9.0.34</version>
+            <scope>provided</scope>
+        </dependency>
+
         <!--- ORM -->
         <dependency>
             <groupId>org.hibernate</groupId>
