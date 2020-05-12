@@ -1,0 +1,37 @@
+<ehcache xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="ehcache.xsd"
+         updateCheck="false">
+
+    <diskStore path="java.io.tmpdir"/>
+
+    <defaultCache
+            overflowToDisk="true"
+            diskPersistent="false"
+            eternal="false"
+            maxElementsInMemory="100000"
+            timeToIdleSeconds="30"
+            timeToLiveSeconds="30"
+            diskExpiryThreadIntervalSeconds="180"
+            memoryStoreEvictionPolicy="LRU"/>
+
+    <cache name="menus"
+           overflowToDisk="false"
+           diskPersistent="false"
+           eternal="false"
+           timeToLiveSeconds="60"
+           maxElementsInMemory="10000"
+           maxElementsOnDisk="100000000"
+           diskExpiryThreadIntervalSeconds="1"
+           memoryStoreEvictionPolicy="LRU"/>
+
+    <cache name="restaurants"
+           overflowToDisk="false"
+           diskPersistent="false"
+           eternal="false"
+           timeToLiveSeconds="60"
+           maxElementsInMemory="10000"
+           maxElementsOnDisk="100000000"
+           diskExpiryThreadIntervalSeconds="1"
+           memoryStoreEvictionPolicy="LRU"/>
+
+</ehcache>
