@@ -3,7 +3,7 @@ package org.myvotingsystem.app.service.implementations;
 import org.junit.Rule;
 import org.junit.rules.ExpectedException;
 import org.junit.runner.RunWith;
-import org.myvotingsystem.app.config.AppConfig;
+import org.myvotingsystem.app.AppConfig;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.jdbc.Sql;
 import org.springframework.test.context.jdbc.SqlConfig;
